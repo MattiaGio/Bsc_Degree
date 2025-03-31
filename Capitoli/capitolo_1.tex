@@ -1,0 +1,104 @@
+\hypersetup{linkcolor=blue, citecolor=red}
+
+\chapter{Introduzione} \label{chap:introduction}
+Al giorno d'oggi le reti di elaboratori sono fondamentali per la nostra società, le troviamo in ogni tipo di azienda e nella pubblica amministrazione. Esse ci permettono di mantenere dati e accedervi da più dispositivi, anche al di fuori della rete locale, e di vivere in un mondo sempre più interconnesso.
+L'importanza di questo tipo di infrastrutture è tale che vengono utilizzate quotidianamente in molteplici ambiti della società.
+Alla base di queste reti vi sono però delle macchine le quali, per gestire al meglio ogni tipo di dato, devono essere opportunamente configurate e gestite, infatti la creazione di queste reti non è per niente banale e richiede una particolare attenzione anche al minimo dettaglio.
+Esiste però un metodo standardizzato per farlo? Esistono protocolli in grado di supportare gli amministratori di rete nella creazione e gestione ottimale delle infrastrutture, evitando la presenza di vulnerabilità critiche spesso causate da incuria o configurazioni inadeguate?
+
+Questa tesi vuole rispondere in maniera dettagliata a queste domande mostrando una situazione chiara sulle reti moderne, sui loro problemi e su come questi potrebbero essere risolti.
+In particolare l'elaborato è strutturato nel seguente modo: il \textbf{Capitolo~\ref{chap:introduction}} presenta sia la struttura dell'elaborato sia il problema, mostra cosa dice la letteratura scientifica a riguardo, la metodologia con cui è stata condotta questa analisi e mostra anche gli obiettivi di questa tesi.
+Il \textbf{Capitolo \ref{chap:2}} esplora l'architettura delle reti e mostra i suoi problemi. Introduce alcuni concetti di base e sottolinea come la progettazione di una rete andrebbe realizzata, in maniera sicura, seguendo dei principi e introducendo le tecnologie adatte per supportarne la sicurezza e il funzionamento, analizzando quindi anche nuovi strumenti senza trascurare le sue performance. Il \textbf{Capitolo \ref{chap:3}} tratta della gestione di queste reti e della loro manutenzione, in particolare andremo ad analizzare i framework di sicurezza esistenti. Daremo spazio alle politiche interne della sicurezza e all'importanza della gerarchia dei ruoli nell'azienda e parleremo poi dei metodi per gestire le reti e per mantenerle sicure nel tempo. 
+Nel \textbf{Capitolo \ref{chap:4}} andremo a esaminare un caso studio di 
+una rete aziendale reale mostrandone il funzionamento e come le strategie analizzate vengono implementate. Nel \textbf{Capitolo \ref{chap:5}} esploreremo le tendenze future in materia e le nuove tecnologie, analizzando paper che mostrano l'integrazione di queste con strumenti già esistenti. Infine parleremo delle limitazioni attuali e daremo le considerazioni finali sul lavoro.
+
+
+
+\newpage
+   \section{Analisi del Problema}
+    Le reti di elaboratori nascono con lo scopo di connettere computer e altri dispositivi digitali tra loro, così da condividere risorse e/o dati. Questo necessita di hardware, software e configurazioni particolari in base a vari fattori, come ad esempio la loro posizione in quanto potrebbero trovarsi nello stesso luogo fisico o in parti diverse del mondo, oppure, per il tipo di servizio che andranno ad offrire.
+    Questo tipo di infrastruttura è diventata necessaria al giorno d'oggi ed è in continua evoluzione, basta pensare a come l'avvento di Internet abbia cambiato la società moderna.
+    Questo progresso però si porta dietro diverse problematiche sotto vari punti di vista, in particolare vista l'esistenza di vari tipi di reti, ognuna ha bisogno di una configurazione diversa, di un'attenzione diversa e si possono avere anche diversi problemi legati alla sicurezza. Se alcune accortezze vengono meno e la loro creazione o manutenzione non è effettuata a regola d'arte si può verificare un ingente problema per l'azienda che potrebbe anche ripercuotersi sulla società stessa.
+
+    \vspace{3mm} %lascia un indentazione che non mi fa impazzire
+    
+    Dato l'ampio utilizzo sia nel settore privato che in quello pubblico, non 
+    solo per la comunicazione e la gestione dei dati aziendali, ma anche per 
+    supportare i servizi essenziali, l'utilizzo di standard sicurezza per il mantenimento di queste reti si rivela fondamentale.
+    Basta pensare che queste tecnologie sono usate anche per servizi critici come quelli sanitari o di emergenza, dove affidabilità e sicurezza sono condizioni necessarie.
+    Con la diffusione di pratiche come la chirurgia a distanza, abbiamo l'esigenza di garantire l'integrità e il corretto funzionamento dei sistemi, così come la trasmissione in tempo reale dei dati a distanza. In contesti come questi, una compromissione della rete potrebbe comportare conseguenze gravi.
+    
+    \vspace{3mm} %lascia un indentazione che non mi fa impazzire
+
+   Il ruolo sempre più centrale che le reti hanno acquisito, e continueranno ad acquisire nel tempo, si riflette anche nella percezione del networking nella società. Oggi si dà quasi per scontato che “la rete” funzioni e sia sicura senza farsi troppi problemi, ma questo non per forza implica che le infrastrutture siano state progettate e manutenute con cura, seguendo standard adeguati.
+   Questo elaborato vuole far luce sulle problematiche che emergono quando si
+   trascurano le buone pratiche nella costruzione o manutenzione delle reti, cercando
+   di creare un protocollo per poterci aiutare a creare una rete solida e sicura. Vuole inoltre spiegare quanto un comportamento superficiale in questo settore possa creare danni anche gravi, analizzeremo infatti i rischi e gli effetti di una gestione negligente, mettendo in evidenza quanto sia cruciale adottare standard elevati per prevenire malfunzionamenti.
+
+\newpage
+    \section{Cosa dice la letteratura scientifica a riguardo}
+        Come possiamo notare in questo paper scritto da F. Liao sull'analisi dei 
+        problemi di sicurezza delle reti di elaboratori e sulle contromisure 
+        \cite{at_press_netw_sec}, lo stato attuale delle reti ha diversi problemi di sicurezza non derivanti dalle macchine in se ma dagli utenti, dai manutentori o dagli ingegneri della rete stessa. Questi problemi sono spesso figli di una noncuranza da parte degli utilizzatori.
+        L'autore evidenzia alcuni dei problemi relativi ai network, anche un esempio banale riportato tra questi è addirittura la mancanza di un'adeguata sorveglianza a queste infrastrutture, il che può consentire l'accesso fisico a potenziali attaccanti.
+        Altre reti presentano molte difficoltà con la stabilità o con la modularità, infatti data una forte ignoranza nei primi anni nella progettazione delle reti si sono formati diversi bug che permettono ad attori esterni di compromettere la rete stessa. Tuttavia questi loophole spesso sono rimasti a causa dell'importanza di tale infrastruttura dato che una successiva modifica avrebbe potuto comportare all'interruzione dei servizi offerti per tempi indeterminati.
+        Altri problemi che i ricercatori hanno trovato nel paper precedente, riguardano le vulnerabilità nei file server, dovute in genere a politiche di accesso non regolate o regolate superficialmente, falla che troviamo anche nella configurazione di firewall, switch o altri dispositivi, spesso dovute a una negligenza, portando alla compromissione della sicurezza in queste infrastrutture.
+
+        \vspace{3mm}
+
+        Visto che questo tema riguarda anche organi fondamentali per governi o per la società, alcune agenzie governative predispongono dei consigli sugli errori da non fare nelle reti o sulle problematiche note, così da mettere in guardia gli ingegneri del software e gli amministratori di rete.
+    
+    \vspace{3mm}
+
+       Enti governativi come l'NSA\footnote{Fonte: NSA (\url{https://www.nsa.gov/})}, National Security Agency, il CISA\footnote{Fonte: CISA (\url{https://www.cisa.gov/})} 
+       Cybersecurity and Infrastructure Security Agency, e altri hanno creato dei programmi ad hoc per favorire questa tematica come il Alerts \& Advisory \cite{cisa2023}, ossia una piattaforma dove regolarmente vengono pubblicati dei documenti scritti da degli esperti con le loro raccomandazioni e consigli su un particolare argomento. Analizzando questo report~\cite{common_network_misconfiguration_cisa} del 5 Ottobre 2023 troviamo 10 degli errori più comuni nelle  configurazioni delle reti.
+        
+        \vspace{3mm}
+        
+        Notiamo come al primo posto, l'errore quindi più comune, è quello di lasciare
+        inalterate le impostazioni o le configurazioni di default dei software, le quali portano ad errori di privacy e sicurezza, infatti queste vulnerabilità possono portare ad accessi non autorizzati. 
+        Alcune configurazioni se non modificate possono includere credenziali, impostazioni e permessi di default. Un semplice esempio può essere quello di non cambiare le credenziali di un router appena installato.
+        Un altro errore tipico è quello di non separare propriamente i permessi amministratore da quelli utente, dando a quest'ultimo più permessi di quello
+        che necessario. 
+        
+        \vspace{3mm}
+
+        Questi sono solo alcuni degli errori più comuni menzionati
+        nell'articolo, dove troviamo anche una scarsa gestione delle credenziali, metodi di autenticazione a fattori multipli deboli o assenti, una scarsa gestione degli aggiornamenti e altro ancora. Gli errori citati dal report sono stati trovati all'interno di reti di grandi organizzazioni, alcune tra queste sono essenziali o critiche.
+
+        Altri dei paper importanti che analizzeremo successivamente sono~\cite{Design_Principles_Secure_Systems} e ~\cite{Advanced_Networking_Cybersecurity_Approaches} per l'architettura di reti sicure e per la gestione~\cite{Comparison_CSF_ISO},~\cite{nist_patch_management},~\cite{access_control} e~\cite{patch_man_framework} manutenzione sicura delle reti.
+    %\vspace{5mm}
+
+                
+            \subsubsection{Un esempio di negligenza di sicurezza nella rete di un'infrastruttura critica}
+                Quando si parla di attacchi legati a servizi essenziali spesso c'è la credenza che i malintenzionati attacchino direttamente i sistemi collegati alla fruizione dei servizi come macchinari o altro, ma in realtà viene prima preso di mira il reparto informatico.
+                Un esempio recente è stato l'attacco alla compagnia Colonial 
+                Pipeline, il più grande sistema di oleodotti per prodotti 
+                petroliferi raffinati negli Stati Uniti~\cite{wiki_colonial_pipeline}.
+                Questo attacco ha bloccato l'intero dipartimento IT grazie ad un ransomware, di cui parleremo nel dettaglio più avanti, portando l'azienda a non poter fatturare i clienti. La 
+                Colonial Pipeline a quel punto ha dovuto sospendere il servizio di fornitura, lasciando tutta la costa est senza carburante per giorni, causando il panico generale. L'attacco iniziò il 7 maggio 2021 e l'azienda riaprì la fornitura il 12 maggio 2021, molte stazioni di rifornimento vennero prese d'assalto dalla popolazione per la paura che si era diffusa, l'aeroporto Charlotte Douglas International Airport in North Carolina cambiò alcuni piani di volo per la scarsità di carburante causata dall'attacco~\cite{airport_reschedule_flights_fuel_shortage}.
+                Gli attaccanti hanno rubato circa 100 GB di dati e hanno chiesto un riscatto di circa 75 Bitcoin (circa \SI{3.5}{\million\EUR} nel 7 maggio 2021) che l'azienda ha dovuto pagare per continuare con le sue operazioni.
+                Questo attacco è stato causato da un account relativo a una VPN non più utilizzato. Non è ben chiaro se gli attaccanti erano entrati in possesso della password tramite o un'estorsione a un ex dipendente oppure se questa è stata reperita tramite delle altre attività online, una delle quali è stata compromessa.
+                Per rispettare lo stato dell'arte nelle reti è buona norma 
+                implementare misure di autenticazione a due fattori
+                anche nelle reti VPN, misura di sicurezza assente nella rete della Colonial Pipeline~\cite{colonial_pipeline_attack}. Diversi sono gli attacchi di questo tipo, portati avanti a causa di una carenza nella manutenzione delle reti, sappiamo come anche diverse strutture ospedaliere americane sono state colpite da un ransomware, che viene portato a termine per una mancanza o una noncuranza del sistema patch management~\cite{us_hospital_ransomware}, \cite{healthcare_us_ransomware_2}.
+
+    %\vspace{5mm}
+
+\newpage
+    \section{Metodologia}
+        La metodologia adottata per questa analisi comparativa si basa su un approccio 
+        misto, qualitativo e quantitativo, con l'obiettivo di approfondire i problemi di 
+        sicurezza delle infrastrutture di rete aziendali e identificare soluzioni pratiche 
+        e standardizzabili. La ricerca si è articolata in diverse fasi, ossia la revisione 
+        della letteratura unita all'analisi di casi studio e l'utilizzo di strumenti 
+        tecnici per la valutazione delle vulnerabilità. Inizialmente, è stata condotta una ricerca sistematica su database accademici come IEEE Xplore, ScienceDirect, ACM Digital Library, e fonti istituzionali, come NIST, CISA e altre, utilizzando parole chiave come “network security architecture”, “patch management”, “zero trust” e “enterprise cyber threats” su strumenti di ricerca, in particolare “Google Scholar”\footnote{Fonte: Google Scholar (\url{https://scholar.google.com/})}. 
+        In particolare, la ricerca avanzata con l'utilizzo di virgolette per le parole chiave e operatori come “AND” mi ha permesso di fare una scrematura importante dei documenti più rilevanti e congruenti con la mia analisi. Inoltre ho controllato in quali paper le fonti da me utilizzate erano state citate, così da ottenere documenti sempre più attinenti all'analisi.
+
+            
+
+        Grazie a questo approccio sono riuscito a condurre un'analisi completa sulla sicurezza delle reti aziendali e ad identificare i principali fattori di rischio, proponendo linee guida pratiche per migliorare la progettazione e la gestione delle infrastrutture di rete.
+
+    \section{Obiettivi}
+        L'obiettivo di questa tesi è approfondire come le reti aziendali dovrebbero essere progettate e configurate per ridurre al minimo le vulnerabilità, in particolare quelle che potrebbero derivare da errori o negligenze nelle loro impostazioni. Analizzeremo dei documenti di istituzioni ufficiali, enti governativi e ricercatori per capire quale sia la strada da percorrere per ottenere una rete sicura, ma soprattutto per mantenerla così nel tempo.
+        L'obiettivo di questa ricerca è quello di mettere insieme tutte le pratiche, le tecniche e gli strumenti che sono necessari per ottenere una rete definibile “sicura”, dando delle linee guida su quali sono i passaggi da seguire, facendone capire le conseguenze della negligenza di questi con casi realmente accaduti.

@@ -1,0 +1,166 @@
+% ============================================== %
+% Author: Mattia Giordano
+%
+% Titolo Tesi: Analisi Comparativa sulla Sicurezza delle Infrastrutture di Rete Aziendali.
+% 
+% Laurea Triennale in Informatica, Sapienza Università di Rome.
+%
+% 
+%
+% ============================================== %
+
+% Document Class
+
+\documentclass[italian, noexaminfo, oneside]{sapthesis}
+
+% Packages
+\usepackage{microtype}
+\usepackage[italian, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{listings}
+%\usepackage{xcolor}
+%\usepackage{geometry} 
+%\usepackage{caption}  
+\usepackage[edges]{forest}
+\usepackage{subcaption}
+\usepackage{float}    
+\usepackage{lipsum}  
+\usepackage{xargs}                     
+%\usepackage{booktabs}
+%\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+%added by me
+\usepackage{comment}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{eurosym}
+\usepackage{comment}
+\usepackage{array,ragged2e}
+\usepackage{dirtytalk}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+
+
+%added by me
+\DeclareSIUnit{\million}{\text{milioni}}
+\DeclareSIUnit{\EUR}{\text{\euro}}
+
+
+% Commands and Settings
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcounter{boxlblcounter}  
+\newcommand{\makeboxlabel}[1]{\fbox{#1.}\hfill}
+\newenvironment{boxlabel}
+  {\begin{list}
+    {\arabic{boxlblcounter}}
+    {\usecounter{boxlblcounter}
+     \setlength{\labelwidth}{3em}
+     \setlength{\labelsep}{0em}
+     \setlength{\itemsep}{2pt}
+     \setlength{\leftmargin}{1.5cm}
+     \setlength{\rightmargin}{2cm}
+     \setlength{\itemindent}{0em} 
+     \let\makelabel=\makeboxlabel
+    }
+  }
+{\end{list}}
+\lstdefinestyle{myStyle}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    numberstyle=\tiny\color{gray},
+    captionpos=b,
+    frame=tb,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{blue!40!black},
+    identifierstyle=\color{black},
+    backgroundcolor=\color{white},
+}
+\lstset{style=mystyle}
+
+% Definisci \chaptername per l'inglese
+\addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
+
+% Metadata
+\hypersetup{pdftitle={Tesi},pdfauthor={Mattia Giordano}, urlcolor=black, linkcolor=black, colorlinks=true}
+\title{Analisi Comparativa sulla Sicurezza delle \\Infrastrutture di Rete Aziendali}
+\author{Mattia Giordano}
+\IDnumber{1884283}
+\course{Corso di Laurea in Informatica}
+\courseorganizer{Facoltà di Ingegneria dell'Informazione, Informatica e Statistica}
+\AcademicYear{2024/2025}
+\advisor{Prof. Alessandro Checco}
+\authoremail{mattia-giordano@hotmail.it}
+\copyyear{2025}
+\thesistype{Tesi di Laurea Triennale}
+
+% ================== DOCUMENT ==================
+\begin{document}
+
+%\lstset{language=Python}
+\frontmatter
+
+\maketitle
+
+% ================== DEDICATION ==================
+\dedication{«Non possiamo dirigere il vento ma possiamo orientare le vele.»\\Seneca.}
+
+% ================== ABSTRACT ==================
+\input{./Capitoli/abstract}
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract} % Aggiunge "Abstract" all'indice
+
+\selectlanguage{italian} % Ritorna all'italiano per il resto del documento
+
+\cleardoublepage
+% ================== INDICE ==================
+\tableofcontents
+\let\cleardoublepage\clearpage
+
+\cleardoublepage
+\mainmatter
+
+% ================== CHAPTER 1 ==================
+\input{./Capitoli/capitolo_1}
+
+% ================== CHAPTER 2 ==================
+\input{./Capitoli/capitolo_2}
+
+% ================== CHAPTER 3 ==================
+\input{./Capitoli/capitolo_3}
+
+%================== CHAPTER 4 ==================
+\input{./Capitoli/capitolo_4}
+
+% ================== CHAPTER 5 ==================
+\input{./Capitoli/capitolo_5}
+
+
+\backmatter
+\phantomsection
+
+% ================== BIBLIOGRAPHY ==================
+\addcontentsline{toc}{chapter}{Bibliografia}
+
+\bibliographystyle{sapthesis}
+\nocite{*}
+\bibliography{./Capitoli/references.bib}
+\backmatter
+% ================== ACKNOWLEDGEMENTS ==================
+\input{./Capitoli/ringraziamenti}
+
+\end{document}
